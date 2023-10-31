@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
-
+import { Row, Col } from 'react-bootstrap';
 import {
   useForm,
   Controller,
@@ -36,11 +36,11 @@ function getStepContent(step, showStep3, handleChoice, navigate) {
     case 1:
       return <Other handleChoice={handleChoice} />;
     case 2:
-      return  <License />;
-    case 3:
-      return <Defaultfee />;
+      return <License />;
+    // case 3:
+    //   return ;
     default:
-      return 'Unknown step';
+      return<Defaultfee />;
   }
 }
 
@@ -59,7 +59,9 @@ const SignupStepper = () => {
 
   const handleNext = data => {
     console.log(data);
-    if (activeStep === 1 && showStep3) {
+    if (activeStep === getSteps().length - 1) {
+      navigate('/signup'); // Redirect to the signup page
+    } else if (activeStep === 1 && showStep3) {
       setActiveStep(activeStep + 2);
     } else {
       setActiveStep(activeStep + 1);
@@ -91,24 +93,42 @@ const SignupStepper = () => {
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(handleNext)}>
           {getStepContent(activeStep, showStep3, handleChoice, navigate)}
-          {/* <div className='d-flex justify-content-center my-5'>
-            <Button
-              className={classes.button}
-              disabled={activeStep === 0}
-              onClick={handleBack}
-            >
-              Back
-            </Button>
 
-            <Button
-              className={classes.button}
-              variant='contained'
-              color='primary'
-              type='submit'
+          <div className='d-flex justify-content-center'>
+            <Row
+              className=' w-100 p-3 text-center'
+              style={{ transform: 'translateY(-100px)' }}
             >
-              {activeStep === getSteps().length - 1 ? 'Finish' : 'Next'}
-            </Button>
-          </div> */}
+              <Col></Col>
+              <Col xl={4}>
+                <Button
+                  className='rounded-5 bg-body '
+                  style={{
+                    border: '1px solid #FAB915',
+                    width: '200px',
+                    color: '#FAB915',
+                  }}
+                  disabled={activeStep === 0}
+                  onClick={handleBack}
+                >
+                  Back
+                </Button>
+              </Col>
+              <Col xl={4}>
+                <Button
+                  className='border-0 rounded-5 mt-3 mt-md-0'
+                  style={{ backgroundColor: '#FAB915', width: '200px' }}
+                  variant='contained'
+                  color='primary'
+                  type='submit'
+                >
+                  {activeStep === getSteps().length - 1 ? 'Finish' : 'Next'}{' '}
+                  <img src='/public/Component 622 – 2.svg' className='ms-2' />
+                </Button>
+              </Col>
+              <Col></Col>
+            </Row>
+          </div>
         </form>
       </FormProvider>
     </div>

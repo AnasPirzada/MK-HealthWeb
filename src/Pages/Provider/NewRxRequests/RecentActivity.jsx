@@ -16,12 +16,12 @@ export const RecentActivity = () => {
       <Navbare activetab='Provider' bgcolor='transparent' />
 
       <Container className='pt-5'>
-        <div className='mt-5' style={{ width: '80%' }}>
+        <div className='mt-5 mobw90' style={{ width: '80%' }}>
           <Row className='mb-3'>
             <h6>Recent Activity</h6>
           </Row>
           <Row>
-            <Col xl={2}>
+            <Col xl={2} xs={4}>
               <Row>
                 <Col className='shadow' style={{ height: '80vh' }}>
                   <div
@@ -79,8 +79,13 @@ export const RecentActivity = () => {
                 </Col>
               </Row>
             </Col>
-            <Col xl={9} className='shadow ms-4'>
-              <Row className='p-4'>{colContent}</Row>
+            <Col
+              xl={10}
+              xs={8}
+              className='ms-0 ms-md-0 shadow'
+              style={{ height: '80vh', overflowY: 'auto',  }}
+            >
+              <Row className='p-0 p-md-4 '>{colContent}</Row>
             </Col>
           </Row>
         </div>

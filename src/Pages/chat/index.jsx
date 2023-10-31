@@ -10,5 +10,5 @@ export const index = () => {
       <Footer />
     </>
   );
-};
+}; 
 export default index;

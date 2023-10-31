@@ -21,8 +21,8 @@ export const Contactdetail = () => {
   const [values, setValues] = useState(Array(CreateAccount.length).fill(''));
   return (
     <div>
-      <Row className='shadow ms-5'>
-        <Col>
+      <Row className='shadow'>
+        <Col className='py-5'>
           {CreateAccount.map((input, index) => (
             <div
               key={index}
@@ -44,10 +44,13 @@ export const Contactdetail = () => {
             </div>
           ))}
         </Col>
-        <Row className='my-5'>
-          <button className='w-25 m-auto border-0 rounded-5 p-2 text-white button'>
-            Next
-          </button>
+        <Row className='my-5 text-center'>
+          {/* <Col xs={12}>
+            <button className='w-50 m-auto border-0 rounded-5 p-2 text-white button'>
+              Next
+              <img src='/public/Component 622 – 2.svg' className='ms-2'/>
+            </button>
+          </Col> */}
         </Row>
       </Row>
     </div>

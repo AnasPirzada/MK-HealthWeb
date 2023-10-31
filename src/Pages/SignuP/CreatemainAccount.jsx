@@ -10,12 +10,12 @@ export const CreatemainAccount = () => {
       <Navbare activetab='' bgcolor='transparent' />
 
       <Container className='pt-5'>
-        <div className='ms-5 mt-5' style={{ width: '60%' }}>
-          <p className='ms-5' style={{ color: '#FAB915' }}>
+        <div className='mt-5 mobw100 m-auto' style={{ width: '80%' }}>
+          <p className='' style={{ color: '#FAB915' }}>
             Create Account as a Health Provider!
           </p>
           <Row>
-            <p className='ms-5'>
+            <p className=''>
               <SignupSteper />
             </p>
           </Row>

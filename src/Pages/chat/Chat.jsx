@@ -90,11 +90,11 @@ const Chat = () => {
   };
   return (
     <>
-      <div className='bg-formm' style={{}}>
+      <div className='bg-formm chatnone' style={{}}>
         <Container className='pt-5'>
-          <Row className='mt-5 bg-white'>
-            <Col xl={3}>
-              <Row>
+          <Row className='mt-5 bg-white shadow'>
+            <Col xl={3} className='bg-white  '>
+              <Row> 
                 <div className='d-flex justify-content-between align-items-center '>
                   <div className='d-flex'>
                     {' '}
@@ -112,7 +112,7 @@ const Chat = () => {
                 </div>
               </Row>
             </Col>
-            <Col xl={9} className='shadow '>
+            <Col xl={9} className=' '>
               <Row>
                 <div className='d-flex p-2'>
                   <div
@@ -134,13 +134,13 @@ const Chat = () => {
               </Row>
             </Col>
           </Row>
-          <Row>
+          <Row className='bg-white shadow mb-5'>
             <Col lg={3} xl={3} md={3} xs={4} className='shadow'>
-              <div
+              <div className=''
                 style={{
                   overflowY: 'auto',
                   maxHeight: '80vh',
-                  padding: '15px',
+                  // padding: '15px',
                 }}
               >
                 {chats.map(chat => (
@@ -149,7 +149,7 @@ const Chat = () => {
                     className='chat-list'
                     style={{
                       backgroundColor:
-                        selectedChat === chat.id ? '#F6F6F6' : '#fff',
+                        selectedChat === chat.id ? '#ECECEC' : '#fff',
                     }}
                     onClick={() => setSelectedChat(chat.id)}
                   >
@@ -195,7 +195,7 @@ const Chat = () => {
             >
               {selectedChat === 'chat1' && (
                 <div
-                  style={{ width: '100%', height: '70vh', overflowY: 'auto' }}
+                  style={{ width: '100%', height: '60vh', overflowY: 'auto' }}
                 >
                   <div>
                     <div style={{ width: '40%' }}>
@@ -246,7 +246,7 @@ const Chat = () => {
               )}
               {selectedChat === 'chat2' && (
                 <div
-                  style={{ width: '100%', height: '800px', overflowY: 'auto' }}
+                  style={{ width: '100%', height: '60vh', overflowY: 'auto' }}
                 >
                   <div>
                     <div style={{ width: '40%' }}>
@@ -275,7 +275,7 @@ const Chat = () => {
               )}
               {selectedChat === 'chat3' && (
                 <div
-                  style={{ width: '100%', height: '800px', overflowY: 'auto' }}
+                  style={{ width: '100%', height: '60vh', overflowY: 'auto' }}
                 >
                   <div>
                     <div style={{ width: '40%' }}>
@@ -304,7 +304,7 @@ const Chat = () => {
               )}
               {selectedChat === 'chat4' && (
                 <div
-                  style={{ width: '100%', height: '800px', overflowY: 'auto' }}
+                  style={{ width: '100%', height: '60vh', overflowY: 'auto' }}
                 >
                   <div>
                     <div style={{ width: '40%' }}>
@@ -333,7 +333,7 @@ const Chat = () => {
               )}
               {selectedChat === 'chat5' && (
                 <div
-                  style={{ width: '100%', height: '800px', overflowY: 'auto' }}
+                  style={{ width: '100%', height: '60vh', overflowY: 'auto' }}
                 >
                   <div>
                     <div style={{ width: '40%' }}>
@@ -362,7 +362,7 @@ const Chat = () => {
               )}
               {selectedChat === 'chat6' && (
                 <div
-                  style={{ width: '100%', height: '800px', overflowY: 'auto' }}
+                  style={{ width: '100%', height: '60vh', overflowY: 'auto' }}
                 >
                   <div>
                     <div style={{ width: '40%' }}>
@@ -391,7 +391,7 @@ const Chat = () => {
               )}
               {selectedChat === 'chat7' && (
                 <div
-                  style={{ width: '100%', height: '800px', overflowY: 'auto' }}
+                  style={{ width: '100%', height: '60vh', overflowY: 'auto' }}
                 >
                   <div>
                     <div style={{ width: '40%' }}>
@@ -420,7 +420,7 @@ const Chat = () => {
               )}
               {selectedChat === 'chat8' && (
                 <div
-                  style={{ width: '100%', height: '800px', overflowY: 'auto' }}
+                  style={{ width: '100%', height: '60vh', overflowY: 'auto' }}
                 >
                   <div>
                     <div style={{ width: '40%' }}>
@@ -449,7 +449,7 @@ const Chat = () => {
               )}
               {selectedChat === 'chat9' && (
                 <div
-                  style={{ width: '100%', height: '800px', overflowY: 'auto' }}
+                  style={{ width: '100%', height: '60vh', overflowY: 'auto' }}
                 >
                   <div>
                     <div style={{ width: '40%' }}>
@@ -478,7 +478,7 @@ const Chat = () => {
               )}
               {selectedChat === 'chat10' && (
                 <div
-                  style={{ width: '100%', height: '800px', overflowY: 'auto' }}
+                  style={{ width: '100%', height: '60vh', overflowY: 'auto' }}
                 >
                   <div>
                     <div style={{ width: '40%' }}>
@@ -507,8 +507,9 @@ const Chat = () => {
               )}
               <Row
                 className='m-auto w-50 text-center'
-                style={{ position: 'absolute', top: '80%' }}
+                style={{ position: 'absolute', top: '85%' }}
               >
+                <Col xs={12}>
                 <div className='message-input d-flex align-items-center'>
                   <input
                     type='text'
@@ -537,7 +538,7 @@ const Chat = () => {
                   >
                     <img src='./send button.svg' alt='sent button' />
                   </div>
-                </div>
+                </div></Col>
               </Row>
             </Col>
           </Row>
