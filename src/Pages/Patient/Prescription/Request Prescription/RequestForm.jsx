@@ -295,11 +295,33 @@ const RequestForm = () => {
                     <p className='my-0 medicationp'>Edit</p>
                   </div>
                   <div className='m-auto obw100 mt-5' style={{ width: '95%' }}>
-                    <Row>
-                      <Col>
-                        <button>Selected</button>
+                    <Row className='shadow p-2 text-center rounded-4 bg-light-subtle d-flex  justify-content-between align-items-center'>
+                      <Col xl={4}>
+                        <button
+                          className=' p-2 border-0 rounded-5 w-50 '
+                          style={{
+                            color: '#FAB915',
+                            backgroundColor: '#FEF3D5',
+                          }}
+                        >
+                          Selected
+                        </button>
+                      </Col>
+                      <Col xl={4}>
+                        <p className='my-0 fw-bold '>Quest Diagnostics</p>
+                      </Col>
+                      <Col xl={4}>
+                        <p
+                          className='my-0 text-muted'
+                          style={{ fontSize: '13px' }}
+                        >
+                          135 Barclay Cir, Ste 103Rochester Hills,MI 48307{' '}
+                        </p>
                       </Col>
                     </Row>
+                    <p className='text-center mt-4'>
+                      You can change your selected pharmacy.
+                    </p>
                   </div>
                 </div>
               )}
