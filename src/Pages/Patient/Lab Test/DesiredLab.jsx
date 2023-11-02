@@ -1,112 +1,134 @@
-import  { useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import TagsInput from 'react-tagsinput';
- // import the styles
-
+import React, { useState } from 'react';
+import { Col, Container, Row, Modal } from 'react-bootstrap';
+import ClearMoreModal from './LearnMore.jsx';
 const DesiredLab = () => {
-    const [tags, setTags] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
-  const handleChange = (tags) => {
-    setTags(tags);
+  const handleShow = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
+
+  const [isRowVisible, setIsRowVisible] = useState(false);
+
+  const toggleRowVisibility = () => {
+    setIsRowVisible(!isRowVisible);
   };
-  const handleTagRemove = (tag) => {
-    setTags(tags.filter(t => t !== tag));
-  };
-    
+
+  const labs = [
+    {
+      name: 'ABO/RH Type (7788)',
+      labp: 'Checks the ABO blood type and Rh Factor',
+    },
+    {
+      name: 'ABO/RH Type (7788)',
+      labp: 'Checks the ABO blood type and Rh Factor',
+    },
+    {
+      name: 'ABO/RH Type (7788)',
+      labp: 'Checks ',
+    },
+    {
+      name: 'ABO/RH Type (7788)',
+      labp: 'Checks the ABO blood type and Rh Factor',
+    },
+    {
+      name: 'ABO/RH Type (7788)',
+      labp: 'Checks the ABO blood type and Rh Factor',
+    },
+    {
+      name: 'ABO/RH Type (7788)',
+      labp: 'Checks the ABO blood type and Rh Factor',
+    },
+    {
+      name: 'ABO/RH Type (7788)',
+      labp: 'Checks',
+    },
+  ];
+
   return (
     <>
       <Container id='requestLab'>
-        <Row className=" m-auto mt-5 mobw100" style={{width:'75%'}} >
-          <Col className=" text-center shadow">
-            <h5 className="mt-5">
+        <Row className='m-auto mt-5 mobw100' style={{ width: '75%' }}>
+          <Col className='text-center shadow'>
+            <h5 className='mt-5'>
               <b>Choose Desired Lab Tests</b>
             </h5>
-            <p
-              className="mobw100 text-secondary m-auto"
-              style={{ fontSize: "14px" , width:'75%' }}
-            >
-              After you finish selecting tests, the total fees due will be
-              displayed before you submit this lab order. At this time, the
-              tests listed are the only tests available through Push Health and
-              stat processing is not available. If you have questions or would
-              like us to add specific tests, please contact us at
-              questions@pushhealth.com.
-            </p>
-{/* 
-            <div className="input-containerr shadow w-50 rounded-5 my-4">
-              <input
-               
-                name="fruits"
-                // placeHolder="enter fruits"
-                type="text"
-                placeholder="Search for test"
-                className="input-field rounded-5 "
-              />
-              <button
-                type="button"
-                className="image-button rounded-5 "
-              ></button>
-            </div> */}
-
-
             <div>
-
-
-
-            <div>
-  <div className="input-containerr shadow mobw100 rounded-5 my-4" style={{width:'50%'}} >
-    <TagsInput
-      value={tags}
-      onChange={handleChange}
-      inputProps={{ placeholder: 'Search for test' }}
-    />
-    <Link to='/LabRequest'>
-    <button type="button" className="image-button rounded-5"></button>
-    </Link>
-  </div>
-  <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-    {tags.map((tag, index) => (
-      <div
-        key={index}
-        style={{
-          border: '1px solid #ccc',
-          padding: '5px 10px',
-          borderRadius: '15px',
-          margin: '5px',
-          display: 'flex',
-          alignItems: 'center'
-        }}
-      >
-        <span>{tag}</span>
-        <button
-          type="button"
-          style={{ border: 'none', background: 'transparent', marginLeft: '5px' }}
-          onClick={() => handleTagRemove(tag)}
-        >
-          <span role="img" aria-label="Remove Tag">❌</span>
-        </button>
-      </div>
-    ))}
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
+              <div
+                className='d-lg-flex justify-content-center align-items-center m-auto my-5 mobw100'
+                style={{ width: '75%' }}
+              >
+                <p className='my-0 me-3'>
+                  <b>Search :</b>
+                </p>
+                <div
+                  className='input-containerr mobw100 rounded-5'
+                  style={{ width: '50%' }}
+                >
+                  <input
+                    placeholder='Search lab tests'
+                    className='p-2 shadow rounded-5 ps-4'
+                  />
+                </div>
+                <p
+                  className='my-0 ms-3 medicationp'
+                  role='button'
+                  onClick={toggleRowVisibility}
+                >
+                  {isRowVisible ? 'Hide' : 'Show'}
+                </p>
+              </div>
+            </div>
           </Col>
         </Row>
+
+        {isRowVisible && (
+          <Row className='m-auto mt-5 mobw100' style={{ width: '75%' }}>
+            {labs.map((lab, index) => (
+              <Col
+                key={index}
+                xl={4}
+                xs={6}
+                className=' d-flex justify-content-start align-items-start mt-4'
+              >
+                <div>
+                    <label className='custom-checkbox'>
+                      <input type='checkbox' className='shadow' />
+                      <span className='checkmark shadow rounded-5 '></span>
+                    </label>
+                </div>
+                <div className='ms-3'>
+                  <p className='my-0 text-black'>
+                    <b>{lab.name}</b>
+                  </p>
+                  <p
+                    className=' my-0 text-nowrap '
+                    style={{ fontSize: '10px' }}
+                  >
+                    {lab.labp}
+
+                    <span
+                      className='ms-2 text-primary'
+                      role='button'
+                      onClick={handleShow}
+                    >
+                      Learn More
+                    </span>
+                  </p>
+                </div>
+                <Modal
+                  show={showModal}
+                  onHide={handleClose}
+                  size='lg'
+                  style={{ backgroundColor: '#E6E6E6' }}
+                >
+                  <Modal.Body className='p-0 rounded-3 '>
+                    <ClearMoreModal alpha={handleClose} />
+                  </Modal.Body>
+                </Modal>
+              </Col>
+            ))}
+          </Row>
+        )}
       </Container>
     </>
   );

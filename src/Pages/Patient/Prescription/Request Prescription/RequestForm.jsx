@@ -157,6 +157,11 @@ const RequestForm = () => {
     setIsUpperRowVisible(!isUpperRowVisible);
   };
 
+  // Define a function to toggle the visibility
+  const toggleUpperRowVisibility = () => {
+    setIsUpperRowVisible(!isUpperRowVisible);
+  };
+
   return (
     <>
       <Container>
@@ -292,7 +297,13 @@ const RequestForm = () => {
                         Step - 2 Choose Pharmacy
                       </b>
                     </h6>
-                    <p className='my-0 medicationp'>Edit</p>
+                    <p
+                      className='my-0 medicationp'
+                      role='button'
+                      onClick={toggleUpperRowVisibility}
+                    >
+                      Edit
+                    </p>
                   </div>
                   <div className='m-auto obw100 mt-5' style={{ width: '95%' }}>
                     <Row className='shadow p-2 text-center rounded-4 bg-light-subtle d-flex  justify-content-between align-items-center'>
@@ -630,7 +641,7 @@ const RequestForm = () => {
               className='btnn py-1 px-4 border-0 shadow rounded-5 mt-3'
               onClick={handleShow}
             >
-              <span className='me-4'>Submit</span>
+              <span className='me-4'>Submit Request</span>
               <img src='/Component 638 – 1.svg' width='30' height='30' />
             </button>
           </Col>
@@ -639,7 +650,7 @@ const RequestForm = () => {
 
       <Modal show={showModal} onHide={handleClose} size='lg'>
         <Modal.Body className='p-0 rounded-3 '>
-          <ConfirmRequestModal />
+          <ConfirmRequestModal onHide={handleClose}/>
         </Modal.Body>
       </Modal>
     </>

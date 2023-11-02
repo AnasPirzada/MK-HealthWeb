@@ -1,25 +1,19 @@
-
-
-import Navbare from "../../../Compunents/Navbar"
-import Footer from "../../../Compunents/Footer"
-import HeroDisease from "./HeroDisease"
-import SearchDiease from "./SearchDiease"
-import OverviewText from "./OverviewText"
+import Navbare from '../../../Compunents/Navbar';
+import Footer from '../../../Compunents/Footer';
+import HeroDisease from './HeroDisease';
+import SearchDiease from './SearchDiease';
+import OverviewText from './OverviewText';
 const Condition = () => {
   return (
     <>
-      <Navbare
-    activetab=''
-    bgcolor='white'
-    />
-<HeroDisease/>
-<SearchDiease/>
-<OverviewText/>
+      <Navbare activetab='' bgcolor='white' />
+      <HeroDisease />
+      <SearchDiease />
+      <OverviewText />
 
-<Footer/>
-    
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Condition
+export default Condition;
