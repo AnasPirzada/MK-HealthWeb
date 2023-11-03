@@ -1,7 +1,7 @@
 import { Col, Row, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const ConfirmRequestModal = (props) => {
+const ConfirmRequestModal = props => {
   const fields = [
     { label: 'First Name:', type: 'text', placeholder: 'Shahid ' },
     { label: 'Last Name:', type: 'text', placeholder: 'Care' },
@@ -131,25 +131,6 @@ const ConfirmRequestModal = (props) => {
               <p className='mb-0 text-nowrap mt-2' style={{ fontSize: '12px' }}>
                 Hemoglobin A1C (496)
               </p> */}
-
-              <Table>
-                <thead>
-                  <tr>
-                    <th>Tests Ordered</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <ol>
-                        {LabtestItems.map((item, index) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ol>
-                    </td>
-                  </tr>
-                </tbody>
-              </Table>
             </div>
           </div>
           <div className='w-75 m-auto mt-5'>
@@ -172,7 +153,7 @@ const ConfirmRequestModal = (props) => {
                 className='mb-0 text-nowrap '
                 style={{ fontSize: '14px', color: '#FAB915' }}
               >
-                <b>Lab</b>
+                <b>Pharmacy</b>
               </p>
               <div className='d-flex justify-content-between align-items-center'>
                 <p

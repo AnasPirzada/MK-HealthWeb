@@ -172,7 +172,7 @@ const RequestForm = () => {
             <br />
 
             <div
-              className=' m-auto  shadow py-5 mobw100 rounded-0 '
+              className=' m-auto  shadow py-5 mobw100 rounded-0'
               style={{ width: '75%' }}
             >
               <h6 className='ms-2 ms-md-5  pb-1'>

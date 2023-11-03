@@ -3,7 +3,7 @@ import { Col, Container, Row, Modal } from 'react-bootstrap';
 import ConfirmRequestModal from './ConfirmRequestModal.jsx';
 import { Dropdown } from 'react-bootstrap';
 // import Google from './Googlemap.jsx';
-const RequestLabForm = () => {
+const RequestForm = () => {
   const [showModal, setShowModal] = useState(false);
 
   const handleShow = () => setShowModal(true);
@@ -170,62 +170,7 @@ const RequestLabForm = () => {
             <br />
             <br />
             <br />
-            <Row className='mt-4'>
-              <div className='text-center medicationp'>
-                <p>Request for lab test</p>
-              </div>
-            </Row>
-            <br />
-            <br />
-            <div
-              className=' m-auto  shadow py-5 mobw100 rounded-0 '
-              style={{ width: '75%' }}
-            >
-              <h6 className='ms-2 ms-md-5  pb-1'>
-                <b style={{ color: '#FAB915' }}>Request Summary</b>
-              </h6>
 
-              <div
-                className='py-3 m-auto   mobw90 rounded-3 '
-                style={{ width: '80%' }}
-              >
-                <div className='m-auto bg-light p-4' style={{ width: '95%' }}>
-                  <div className='d-flex justify-content-between align-items-center w-100 border-bottom'>
-                    <p>Medical provider review and platform fees</p>
-                    <p>$49.99</p>
-                  </div>
-                  <div className='d-flex justify-content-between align-items-center w-100 border-bottom mt-3'>
-                    <p>
-                      COVID-19 IgG Antibody, Semi-Quantitative Test (Lab will
-                      bill you directly)
-                    </p>
-                    <p>$55.00</p>
-                  </div>
-                  <div className='d-flex justify-content-between align-items-center w-100 border-bottom mt-3'>
-                    <p>Lab collection fees (Lab will bill you directly)</p>
-                    <p>$22.00</p>
-                  </div>
-                  <div className='text-end'>
-                    <div className='d-flex justify-content-end align-content-end '>
-                      <p className='my-0'>Estimated Total Cost:</p>
-                      <p className='ms-4 my-0'>$127.49</p>
-                    </div>
-                  </div>
-                  <div className='text-end  mt-4'>
-                    <div className='d-flex justify-content-end align-content-end '>
-                      <h6 className='my-0'>
-                        <b>Total Due Now:</b>
-                      </h6>
-                      <h6 className='ms-4 my-0'>
-                        <b>$49.99</b>
-                      </h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <br />
-            <br />
             <div
               className=' m-auto  shadow py-5 mobw100 rounded-0 '
               style={{ width: '75%' }}
@@ -705,11 +650,11 @@ const RequestLabForm = () => {
 
       <Modal show={showModal} onHide={handleClose} size='lg'>
         <Modal.Body className='p-0 rounded-3 '>
-          <ConfirmRequestModal prop={handleClose}/>
+          <ConfirmRequestModal prop={handleClose} />
         </Modal.Body>
       </Modal>
     </>
   );
 };
 
-export default RequestLabForm;
+export default RequestForm;

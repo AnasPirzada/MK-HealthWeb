@@ -1,11 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import { Col, Container, Row, Modal } from 'react-bootstrap';
-import Footer from "../../../Compunents/Footer"
-import Navbare from "../../../Compunents/Navbar"
-
+import Footer from '../../../Compunents/Footer';
+import Navbare from '../../../Compunents/Navbar';
 
 const ProviderChart = () => {
-    const datePickerRef = useRef(null);
+  const datePickerRef = useRef(null);
 
   const openDatePicker = () => {
     datePickerRef.current.click();
@@ -30,9 +29,9 @@ const ProviderChart = () => {
   };
   return (
     <>
-    <Navbare/>
+      <Navbare />
 
-    <Container>
+      <Container>
         <Row>
           <Col>
             <h3 className='m-auto py-3' style={{ width: '75%' }}>
@@ -111,20 +110,22 @@ const ProviderChart = () => {
                     />
                   </div>
                 ))}
-                <div className=' m-auto' style={{ width: '80%' }}>
-                  <button
-                  className='text-white rounded-3 w-50  border-0 p-3 d-flex justify-content-between align-items-center mt-5'
-                  style={{ backgroundColor: '#FAB915' }}
-                >
-                  <img src='./Component 619 – 3.svg' alt='plus' />
-                  April 24, 2023 - Lab Results
-                  <img
-                    src='./ArrowRight.svg'
-                    alt='dropdown'
-                  />
-                </button>
-
-                </div>
+                <Row>
+                  <Col xl={1}></Col>
+                  <Col xs={12} xl={5} lg={12} md={12}>
+                    <div className=' m-auto' style={{ width: '80%' }}>
+                      <button
+                        className='text-white rounded-3 w-100  border-0 p-3 d-flex justify-content-between align-items-center mt-5'
+                        style={{ backgroundColor: '#FAB915' }}
+                      >
+                        <img src='./Component 619 – 3.svg' alt='plus' />
+                        April 24, 2023 - Lab Results
+                        <img src='./ArrowRight.svg' alt='dropdown' />
+                      </button>
+                    </div>
+                  </Col>
+                  <Col xl={6}></Col>
+                </Row>
               </div>
             </div>
 
@@ -133,9 +134,9 @@ const ProviderChart = () => {
           </Col>
         </Row>
       </Container>
-<Footer/>    
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default ProviderChart
+export default ProviderChart;

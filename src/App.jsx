@@ -17,6 +17,9 @@ import LabRequest from './Pages/Patient/Lab Test/LabRequest';
 import Condition from './Pages/Patient/Condition-Disease';
 import Prescription from './Pages/Patient/Prescription';
 import RequestPrescription from './Pages/Patient/Prescription/Request Prescription';
+import RequestMedication from './Pages/Patient/Prescription/Medications/RequestMedication.jsx';
+import Medications from './Pages/Patient/Prescription/Medications/MedicationsForm.jsx';
+
 import ConditionForm from './Pages/Patient/Condition-Disease/ConditionForm';
 import MyCharts from './Pages/Patient/MyCharts';
 import Payment from './Pages/Payment';
@@ -55,6 +58,7 @@ function App() {
             path='/RequestPrescription'
             element={<RequestPrescription />}
           />
+          <Route path='/RequestMedication' element={<RequestMedication />} />
           <Route path='/ConditionForm' element={<ConditionForm />} />
           <Route path='/myCharts' element={<MyCharts />} />
           <Route path='/Payment' element={<Payment />} />
@@ -62,6 +66,7 @@ function App() {
             path='/RequestedPrescription'
             element={<RequestedPrescription />}
           />
+          <Route path='/Medications' element={<Medications />} />
           <Route path='/RxRequest' element={<RxRequest />} />
           <Route path='/RecentActivitypage' element={<RecentActivitypage />} />
           <Route path='/CollaguesPage' element={<CollaguesPage />} />

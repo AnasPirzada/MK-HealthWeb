@@ -1,18 +1,16 @@
-import Footer from "../../../../Compunents/Footer"
-import Navbare from "../../../../Compunents/Navbar"
-import UpdateForm from "./UpdateForm"
-
+import Footer from '../../../../Compunents/Footer';
+import Navbare from '../../../../Compunents/Navbar';
+import UpdateForm from './UpdateForm';
 
 const RequestedPrescription = () => {
   return (
     <>
-    
-<Navbare/>
+      <Navbare />
 
-<UpdateForm/>
-<Footer/>
+      <UpdateForm />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default RequestedPrescription
+export default RequestedPrescription;

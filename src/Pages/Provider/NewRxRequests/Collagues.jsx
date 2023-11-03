@@ -12,9 +12,9 @@ export const Collagues = () => {
             <h4 className='text-black mt-5 pb-4'>Colleagues</h4>
           </Row>
           <Row className='shadow p-5'>
-            <Col>
+            <Col xs={12} xl={6}>
               <button
-                className='border-0 p-4 w-100 text-white shadow d-flex justify-content-between align-items-center rounded-3 '
+                className='border-0 p-4 mt-3 w-100 text-white shadow d-flex justify-content-between align-items-center rounded-3 '
                 style={{ backgroundColor: '#FAB915' }}
               >
                 <img src='./colleugeChat.svg' alt='chat' />
@@ -24,7 +24,7 @@ export const Collagues = () => {
             </Col>
             <Col>
               <button
-                className='border-0 p-4 w-100 text-white shadow d-flex justify-content-between align-items-center rounded-3 '
+                className='border-0 p-4 w-100 mt-3 text-white shadow d-flex justify-content-between align-items-center rounded-3 '
                 style={{ backgroundColor: '#FAB915' }}
               >
                 <img src='./InviteColleuge.svg' alt='drop down arrow' />

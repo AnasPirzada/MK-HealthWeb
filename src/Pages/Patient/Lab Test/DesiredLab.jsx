@@ -101,8 +101,8 @@ const DesiredLab = () => {
                     <b>{lab.name}</b>
                   </p>
                   <p
-                    className=' my-0 text-nowrap '
-                    style={{ fontSize: '10px' }}
+                    className=' my-0 '
+                    style={{ fontSize: '12px' }}
                   >
                     {lab.labp}
 

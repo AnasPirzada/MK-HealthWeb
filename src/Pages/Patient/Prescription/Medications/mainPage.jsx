@@ -1,7 +1,7 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-export const ChooseMedication = () => {
+export const mainPage = () => {
   // Define an array of medication names
   const medications = [
     'Acyclovir (Zovirax)',
@@ -126,39 +126,43 @@ export const ChooseMedication = () => {
 
   return (
     <div>
-      <Row>
-        <Col>
-          <p className='text-black fs-3'>Choose Medication Refills</p>
-          <p className='text-muted'>
-            Medications that cannot be refilled via an online prescription
-            through a service like MK Health included controlled medications
-            like narcotics or anxiety medications, gabapentin, or any other
-            medication that a medical provider determines would not be
-            appropriate to prescribe through an online evaluation.
-          </p>
-          <p className='mt-3 text-black'>Common Medication Refills</p>
-        </Col>
-      </Row>
-      <Row className='m-auto'>
-        {medications.map((medication, index) => (
-          <Col key={index} xl={4} xs={6} className='medicationp'>
-            <Link to='/RequestPrescription'>
-              <p className='medicationp'>{medication}</p>
-            </Link>
+      <Container>
+        <Row>
+          <Col>
+            <p className='text-black fs-3'>Choose Medication Refills</p>
+            <p className='text-muted'>
+              Medications that cannot be refilled via an online prescription
+              through a service like MK Health included controlled medications
+              like narcotics or anxiety medications, gabapentin, or any other
+              medication that a medical provider determines would not be
+              appropriate to prescribe through an online evaluation.
+            </p>
+            <p className='mt-3 text-black'>Common Medication Refills</p>
           </Col>
-        ))}
-      </Row>
+        </Row>
+        <Row className='m-auto'>
+          {medications.map((medication, index) => (
+            <Col key={index} xl={4} xs={6} className='medicationp'>
+              <Link to='/RequestMedication'>
+                <p className='medicationp'>{medication}</p>
+              </Link>
+            </Col>
+          ))}
+        </Row>
 
-      <Row className='m-auto mt-4'>
-        <p>Other Medication Refills</p>
-        {Other.map((Other, index) => (
-          <Col key={index} xl={4} xs={6} className='medicationp'>
+        <Row className='m-auto mt-4'>
+          <p>Other Medication Refills</p>
+          {Other.map((Other, index) => (
+            <Col key={index} xl={4} xs={6} className='medicationp'>
+              <Link to='/RequestMedication'>
                 <p className='medicationp'>{Other}</p>
-          </Col>
-        ))}
-      </Row>
+              </Link>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 };
 
-export default ChooseMedication;
+export default mainPage;
