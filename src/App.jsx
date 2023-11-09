@@ -28,6 +28,7 @@ import RxRequest from './Pages/Provider/NewRxRequests';
 import RecentActivitypage from './Pages/Provider/NewRxRequests/RecentActivity.jsx';
 import CollaguesPage from './Pages/Provider/NewRxRequests/Collagues.jsx';
 import PaitentDetail from './Pages/Provider/NewRxRequests/PaitentDetail';
+import Practicestates from './Pages/Provider/NewRxRequests/PracticeStates.jsx';
 
 import RequestedRxForm from './Pages/Provider/NewRxRequests/RequestedRxForm';
 import ReviewPrescribePage from './Pages/Provider/NewRxRequests/ReviewPrescribePage';
@@ -55,6 +56,7 @@ function App() {
           <Route path='/Prescription' element={<Prescription />} />
           <Route path='/Condition' element={<Condition />} />
           <Route path='/LabRequest' element={<LabRequest />} />
+          <Route path='/Practicestates' element={<Practicestates />} />
           <Route
             path='/RequestPrescription'
             element={<RequestPrescription />}

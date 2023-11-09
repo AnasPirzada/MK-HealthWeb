@@ -9,6 +9,14 @@ body {
   color: #FAB915 !important;
 }
 
+.tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border: none !important;
+}
 
 .text {
   color: #747E93;
