@@ -32,6 +32,7 @@ import PaitentDetail from './Pages/Provider/NewRxRequests/PaitentDetail';
 import RequestedRxForm from './Pages/Provider/NewRxRequests/RequestedRxForm';
 import ReviewPrescribePage from './Pages/Provider/NewRxRequests/ReviewPrescribePage';
 import ProviderChart from './Pages/Provider/My Chart';
+import Profile from './Pages/chat/profile.jsx';
 
 // import LabRequest from "./Pages/Lab Test/LabRequest";
 
@@ -77,6 +78,7 @@ function App() {
             element={<ReviewPrescribePage />}
           />
           <Route path='/ProviderChart' element={<ProviderChart />} />
+          <Route path='/Profile' element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </>

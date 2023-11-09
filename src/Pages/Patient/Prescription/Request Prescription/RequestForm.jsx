@@ -43,13 +43,16 @@ const RequestForm = () => {
     { placeholder: '000 - 0000 - 0000', label: 'Phone', type: 'number' },
   ];
 
-  const [values, setValues] = useState(Array(inputDetails.length).fill(''));
+  const [inputValues, setInputValues] = useState(
+    Array(inputDetails.length).fill('')
+  );
 
-  const handleChange = (index, e) => {
-    const updatedValues = [...values];
-    updatedValues[index] = e.target.value;
-    setValues(updatedValues);
+  const handleInputChange = (index, e) => {
+    const updatedInputValues = [...inputValues];
+    updatedInputValues[index] = e.target.value;
+    setInputValues(updatedInputValues);
   };
+
   const [pharmacies] = useState([
     {
       name: 'A - Quest Diagnostics',
@@ -130,6 +133,14 @@ const RequestForm = () => {
     },
   ];
 
+  const [healthValues, setHealthValues] = useState(
+    Array(patientHealthDetails.length).fill('')
+  );
+  const handleHealthChange = (index, e) => {
+    const updatedHealthValues = [...healthValues];
+    updatedHealthValues[index] = e.target.value;
+    setHealthValues(updatedHealthValues);
+  };
   const [selectedPharmacies, setSelectedPharmacies] = useState([]);
 
   const toggleSelect = index => {
@@ -363,8 +374,8 @@ const RequestForm = () => {
                       type={input.type}
                       className='shadow border-0  w-100 m-0 p-3 rounded-5 '
                       placeholder={input.placeholder}
-                      value={values[index]}
-                      onChange={e => handleChange(index, e)}
+                      value={inputValues[index]}
+                      onChange={e => handleInputChange(index, e)}
                     />
                   </div>
                 ))}
@@ -459,19 +470,19 @@ const RequestForm = () => {
               </h6>
 
               <div>
-                {patientHealthDetails.map((input, index) => (
+                {patientHealthDetails.map((inputh, index) => (
                   <div
                     key={index}
                     className=' m-auto mobw90'
                     style={{ width: '80%' }}
                   >
-                    <p className='mb-1 ms-3 mt-3 '>{input.label}</p>
+                    <p className='mb-1 ms-3 mt-3 '>{inputh.label}</p>
                     <input
-                      type={input.type}
+                      type={inputh.type}
                       className='shadow border-0  w-100 m-0 p-3 rounded-5 '
-                      placeholder={input.placeholder}
-                      value={values[index]}
-                      onChange={e => handleChange(index, e)}
+                      placeholder={inputh.placeholder}
+                      value={healthValues[index]}
+                      onChange={e => handleHealthChange(index, e)}
                     />
                   </div>
                 ))}
@@ -650,7 +661,7 @@ const RequestForm = () => {
 
       <Modal show={showModal} onHide={handleClose} size='lg'>
         <Modal.Body className='p-0 rounded-3 '>
-          <ConfirmRequestModal onHide={handleClose}/>
+          <ConfirmRequestModal onHide={handleClose} />
         </Modal.Body>
       </Modal>
     </>

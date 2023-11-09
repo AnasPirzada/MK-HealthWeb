@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import './chat.css';
+import { Link } from 'react-router-dom';
 const Chat = () => {
   const [chats, setChats] = useState([
     {
@@ -94,7 +95,7 @@ const Chat = () => {
         <Container className='pt-5'>
           <Row className='mt-5 bg-white shadow'>
             <Col xl={3} className='bg-white  '>
-              <Row> 
+              <Row>
                 <div className='d-flex justify-content-between align-items-center '>
                   <div className='d-flex'>
                     {' '}
@@ -115,17 +116,19 @@ const Chat = () => {
             <Col xl={9} className=' '>
               <Row>
                 <div className='d-flex p-2'>
-                  <div
-                    className='d-flex justify-content-center'
-                    style={{
-                      backgroundColor: '#FBCACA',
-                      borderRadius: '50%',
-                      width: '30px',
-                      height: '30px',
-                    }}
-                  >
-                    <p>G</p>
-                  </div>
+                  <Link to='/profile'>
+                    <div
+                      className='d-flex justify-content-center'
+                      style={{
+                        backgroundColor: '#FBCACA',
+                        borderRadius: '50%',
+                        width: '30px',
+                        height: '30px',
+                      }}
+                    >
+                      <p>G</p>
+                    </div>
+                  </Link>{' '}
                   <div className='ms-3'>
                     <p className='my-0'>Gus M.</p>
                     <small>Last seen 1 hour ago</small>
@@ -136,7 +139,8 @@ const Chat = () => {
           </Row>
           <Row className='bg-white shadow mb-5'>
             <Col lg={3} xl={3} md={3} xs={4} className='shadow'>
-              <div className=''
+              <div
+                className=''
                 style={{
                   overflowY: 'auto',
                   maxHeight: '80vh',
@@ -510,35 +514,37 @@ const Chat = () => {
                 style={{ position: 'absolute', top: '85%' }}
               >
                 <Col xs={12}>
-                <div className='message-input d-flex align-items-center'>
-                  <input
-                    type='text'
-                    placeholder='Write message ..'
-                    className='w-100 p-4 border-0 shadow rounded-3 text-mute'
-                    onKeyDown={e => {
-                      if (e.key === 'Enter') {
-                        handleSendMessage(e.target.value);
-                        e.target.value = '';
-                      }
-                    }}
-                  />
-                  <div
-                    className='p-3 d-flex justify-content-center align-items-center rounded-3'
-                    style={{
-                      backgroundColor: '#FAB915',
-                      width: '50px',
-                      transform: 'translateX(-60px)',
-                    }}
-                    onClick={() => {
-                      handleSendMessage(
-                        document.querySelector('.message-input input').value
-                      );
-                      document.querySelector('.message-input input').value = '';
-                    }}
-                  >
-                    <img src='./send button.svg' alt='sent button' />
+                  <div className='message-input d-flex align-items-center'>
+                    <input
+                      type='text'
+                      placeholder='Write message ..'
+                      className='w-100 p-4 border-0 shadow rounded-3 text-mute'
+                      onKeyDown={e => {
+                        if (e.key === 'Enter') {
+                          handleSendMessage(e.target.value);
+                          e.target.value = '';
+                        }
+                      }}
+                    />
+                    <div
+                      className='p-3 d-flex justify-content-center align-items-center rounded-3'
+                      style={{
+                        backgroundColor: '#FAB915',
+                        width: '50px',
+                        transform: 'translateX(-60px)',
+                      }}
+                      onClick={() => {
+                        handleSendMessage(
+                          document.querySelector('.message-input input').value
+                        );
+                        document.querySelector('.message-input input').value =
+                          '';
+                      }}
+                    >
+                      <img src='./send button.svg' alt='sent button' />
+                    </div>
                   </div>
-                </div></Col>
+                </Col>
               </Row>
             </Col>
           </Row>

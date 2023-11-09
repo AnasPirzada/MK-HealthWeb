@@ -98,6 +98,7 @@ const ConfirmRequestModal = (props) => {
                   type={field.type}
                   className='p-0 m-0'
                   placeholder={field.placeholder}
+                  
                 />
               </div>
             ))}
