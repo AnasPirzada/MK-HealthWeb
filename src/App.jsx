@@ -28,11 +28,14 @@ import RxRequest from './Pages/Provider/NewRxRequests';
 import RecentActivitypage from './Pages/Provider/NewRxRequests/RecentActivity.jsx';
 import CollaguesPage from './Pages/Provider/NewRxRequests/Collagues.jsx';
 import PaitentDetail from './Pages/Provider/NewRxRequests/PaitentDetail';
+import Invite from './Pages/Provider/NewRxRequests/InvitePatients.jsx';
+import MessagePatients from './Pages/Provider/NewRxRequests/MessagePatients.jsx';
 import Practicestates from './Pages/Provider/NewRxRequests/PracticeStates.jsx';
 
 import RequestedRxForm from './Pages/Provider/NewRxRequests/RequestedRxForm';
 import ReviewPrescribePage from './Pages/Provider/NewRxRequests/ReviewPrescribePage';
 import ProviderChart from './Pages/Provider/My Chart';
+import OrdermySelf from'./Pages/Provider/NewRxRequests/FormOrdermySelf.jsx';
 import Profile from './Pages/chat/profile.jsx';
 
 // import LabRequest from "./Pages/Lab Test/LabRequest";
@@ -74,12 +77,15 @@ function App() {
           <Route path='/RecentActivitypage' element={<RecentActivitypage />} />
           <Route path='/CollaguesPage' element={<CollaguesPage />} />
           <Route path='/PaitentDetail' element={<PaitentDetail />} />
+          <Route path='/Invite' element={<Invite />} />
+          <Route path='/MessagePatients' element={<MessagePatients />} />
           <Route path='/RequestedRxForm' element={<RequestedRxForm />} />
           <Route
             path='/ReviewPrescribePage'
             element={<ReviewPrescribePage />}
           />
           <Route path='/ProviderChart' element={<ProviderChart />} />
+          <Route path='/OrdermySelf' element={<OrdermySelf />} />
           <Route path='/Profile' element={<Profile />} />
         </Routes>
       </BrowserRouter>

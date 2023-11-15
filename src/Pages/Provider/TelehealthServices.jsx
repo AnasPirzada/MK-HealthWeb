@@ -37,9 +37,9 @@ const TelehealthServices = () => {
     },
     { text: 'My Chart', imagePath: '/Path 32208.svg', link: '/ProviderChart' },
     {
-      text: 'Condition/Disease',
+      text: 'Message All Patients',
       imagePath: '/Path 32209.svg',
-      link: '/new-rx-requests',
+      link: '/MessagePatients',
     },
     {
       text: 'Recent Activity',
@@ -49,7 +49,7 @@ const TelehealthServices = () => {
     {
       text: 'Invite Patients',
       imagePath: '/Group 7481.svg',
-      link: '/new-rx-requests',
+      link: '/Invite',
     },
     { text: 'Collagues', imagePath: '/Path 32254.svg', link: '/CollaguesPage' },
     {
