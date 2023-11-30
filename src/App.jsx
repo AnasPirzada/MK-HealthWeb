@@ -33,6 +33,7 @@ import MessagePatients from './Pages/Provider/NewRxRequests/MessagePatients.jsx'
 import Practicestates from './Pages/Provider/NewRxRequests/PracticeStates.jsx';
 
 import RequestedRxForm from './Pages/Provider/NewRxRequests/RequestedRxForm';
+import WriteRxConfirmfee from './Pages/Provider/NewRxRequests/WriteRxConfirm.jsx';
 import ReviewPrescribePage from './Pages/Provider/NewRxRequests/ReviewPrescribePage';
 import ProviderChart from './Pages/Provider/My Chart';
 import OrdermySelf from'./Pages/Provider/NewRxRequests/FormOrdermySelf.jsx';
@@ -80,6 +81,7 @@ function App() {
           <Route path='/Invite' element={<Invite />} />
           <Route path='/MessagePatients' element={<MessagePatients />} />
           <Route path='/RequestedRxForm' element={<RequestedRxForm />} />
+          <Route path='/WriteRxConfirmfee' element={<WriteRxConfirmfee />} />
           <Route
             path='/ReviewPrescribePage'
             element={<ReviewPrescribePage />}

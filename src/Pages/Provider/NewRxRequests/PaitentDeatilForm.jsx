@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
-import { Col, Container, Row, Modal } from 'react-bootstrap';
+import { useEffect, useRef, useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const PaitentDeatilForm = () => {
@@ -45,6 +45,15 @@ const PaitentDeatilForm = () => {
 
   const handleImageClick2 = () => {
     setIsSectionVisible(false);
+  };
+  const [issSectionVisible, setIssSectionVisible] = useState(true);
+
+  const handleImageClickprogress = () => {
+    setIssSectionVisible(!issSectionVisible);
+  };
+
+  const handleImageClickprogress2 = () => {
+    setIssSectionVisible(false);
   };
 
   return (
@@ -173,39 +182,83 @@ const PaitentDeatilForm = () => {
                 )}
               </div>
             )}
+            <br />
+            <br />
+
             <div
-              className='shadow my-4 m-auto p-4 mobw100'
+              className=' m-auto mt-5 d-flex justify-content-start align-items-center shadow p-4 mobw100 rounded-5 '
               style={{ width: '80%' }}
             >
+              <img
+                src='./galaAdd0.svg'
+                className='me-4'
+                role='button'
+                onClick={handleImageClickprogress}
+              />
+              <p className='my-0' style={{ color: '#FAB915' }}>
+                Add Progress Note
+              </p>
+            </div>
+
+            {issSectionVisible && (
+              <div
+                className=' m-auto mt-5 shadow p-4 mobw100 rounded-4 '
+                style={{ width: '80%' }}
+              >
+                <div className='d-flex justify-content-start align-items-center border-bottom pb-3'>
+                  <img
+                    src='./gala_add.svg'
+                    role='button'
+                    className='me-4'
+                    onClick={handleImageClickprogress2}
+                  />
+                  <p className='my-0' style={{ color: '#FAB915' }}>
+                    Add progress Note
+                  </p>
+                </div>
+                {issSectionVisible && (
+                  <div style={{ height: '10vh' }} className='mt-4'>
+                    <textarea
+                      placeholder='Type here.. '
+                      className='w-100 p-4 border-0 shadow  rounded-5'
+                    ></textarea>
+                  </div>
+                )}
+              </div>
+            )}
+
+            <div className=' my-5 m-auto p-4 mobw100' style={{ width: '80%' }}>
               <Row>
-                <Col md={6}>
-                  <button
-                    className={`text-white w-100 p-3 border-0 rounded-3 mb-2 ${
-                      activeButton === 0 ? 'active-button' : ''
-                    }`}
-                    style={{
-                      backgroundColor:
-                        activeButton === 0 ? '#EB5757' : '#B6C5D1',
-                    }}
-                    onClick={() => handleButtonClick(0)}
-                  >
-                    <img
-                      src='./Component 613 – 2.svg'
-                      alt='icon'
-                      className='me-3'
-                    />
-                    Rx Request Pending
-                  </button>
-                </Col>
                 <Col md={6}>
                   <Link to='/RequestedRxForm'>
                     <button
-                      className={`text-white w-100 p-3 border-0 rounded-3 mb-2 ${
+                      className={`text-white w-100 p-3 border-0 rounded-5 mb-5 ${
+                        activeButton === 0 ? 'active-button' : ''
+                      }`}
+                      style={{
+                        backgroundColor:
+                          activeButton === 0 ? '#F52E2E' : '#FAB915',
+                      }}
+                      onClick={() => handleButtonClick(0)}
+                    >
+                      <img
+                        src='./Component 613 – 2.svg'
+                        alt='icon'
+                        className='me-3'
+                      />
+                      Rx Request Pending
+                    </button>
+                  </Link>
+                </Col>
+                <Col md={6}>
+                  {/* <Link to='/RequestedRxForm'> */}
+                    <button
+                      className={`text-white w-100 p-3 border-0 rounded-5 mb-2 ${
                         activeButton === 1 ? 'active-button' : ''
                       }`}
                       style={{
                         backgroundColor:
-                          activeButton === 1 ? '#EB5757' : '#B6C5D1',
+                          activeButton === 1 ? '#F52E2E' : '#FAB915',
                       }}
                       onClick={() => handleButtonClick(1)}
                     >
@@ -216,16 +269,16 @@ const PaitentDeatilForm = () => {
                       />
                       Write Prescription
                     </button>
-                  </Link>
+                  {/* </Link> */}
                 </Col>
                 <Col md={6}>
                   <button
-                    className={`text-white w-100 p-3 border-0 rounded-3 mb-2 ${
+                    className={`text-white w-100 p-3 border-0 rounded-5 mb-2 ${
                       activeButton === 2 ? 'active-button' : ''
                     }`}
                     style={{
                       backgroundColor:
-                        activeButton === 2 ? '#EB5757' : '#B6C5D1',
+                        activeButton === 2 ? '#F52E2E' : '#FAB915',
                     }}
                     onClick={() => handleButtonClick(2)}
                   >
@@ -239,12 +292,12 @@ const PaitentDeatilForm = () => {
                 </Col>
                 <Col md={6}>
                   <button
-                    className={`text-white w-100 p-3 border-0 rounded-3 mb-2 ${
+                    className={`text-white w-100 p-3 border-0 rounded-5 mb-2 ${
                       activeButton === 3 ? 'active-button' : ''
                     }`}
                     style={{
                       backgroundColor:
-                        activeButton === 3 ? '#EB5757' : '#B6C5D1',
+                        activeButton === 3 ? '#F52E2E' : '#FAB915',
                     }}
                     onClick={() => handleButtonClick(3)}
                   >

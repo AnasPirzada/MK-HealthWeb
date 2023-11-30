@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 import Footer from '../../../Compunents/Footer';
 import Navbare from '../../../Compunents/Navbar';
-
 const ProviderChart = () => {
   const [isOpen1, setIsOpen1] = useState(false);
   const [iconSrc1, setIconSrc1] = useState('./galaAdd0.svg');
