@@ -33,11 +33,11 @@
   margin-right: 5px;
 }
 
-.form-group input:checked+label:after {
+.form-group input:checked + label:after {
   content: "";
   display: block;
   position: absolute;
-  top: 5px;
+  top: 4px;
   left: 9px;
   width: 6px;
   height: 14px;

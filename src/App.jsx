@@ -34,9 +34,12 @@ import Practicestates from './Pages/Provider/NewRxRequests/PracticeStates.jsx';
 
 import RequestedRxForm from './Pages/Provider/NewRxRequests/RequestedRxForm';
 import WriteRxConfirmfee from './Pages/Provider/NewRxRequests/WriteRxConfirm.jsx';
+import Writeprescription from './Pages/Provider/NewRxRequests/writePrescription.jsx';
+import CreateInvoice from './Pages/Provider/NewRxRequests/createInvoice.jsx';
+import OrderLabTests from './Pages/Provider/OrderLabtests/Orderlabtest.jsx';
 import ReviewPrescribePage from './Pages/Provider/NewRxRequests/ReviewPrescribePage';
 import ProviderChart from './Pages/Provider/My Chart';
-import OrdermySelf from'./Pages/Provider/NewRxRequests/FormOrdermySelf.jsx';
+import OrdermySelf from './Pages/Provider/OrderForMyself/index.jsx';
 import Profile from './Pages/chat/profile.jsx';
 
 // import LabRequest from "./Pages/Lab Test/LabRequest";
@@ -82,6 +85,9 @@ function App() {
           <Route path='/MessagePatients' element={<MessagePatients />} />
           <Route path='/RequestedRxForm' element={<RequestedRxForm />} />
           <Route path='/WriteRxConfirmfee' element={<WriteRxConfirmfee />} />
+          <Route path='/Writeprescription' element={<Writeprescription />} />
+          <Route path='/CreateInvoice' element={<CreateInvoice />} />
+          <Route path='/OrderLabTests' element={<OrderLabTests />} />
           <Route
             path='/ReviewPrescribePage'
             element={<ReviewPrescribePage />}

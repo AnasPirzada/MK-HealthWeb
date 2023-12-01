@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import Footer from '../../../Compunents/Footer';
 import Navbare from '../../../Compunents/Navbar';
 const ProviderChart = () => {
@@ -44,18 +44,18 @@ const ProviderChart = () => {
               <div className=' m-auto' style={{ width: '80%' }}>
                 <Row>
                   <Col md={6}>
-                  <Link to='/OrdermySelf'>
-                    <button
-                      className='w-100 p-3 rounded-5 border-0 text-white'
-                      style={{ backgroundColor: '#FAB915' }}
-                    >
-                      <img
-                        src='./icomoon-free_lab.svg'
-                        alt='down arrow'
-                        className='me-4'
-                      />
-                      Order For Myself
-                    </button>
+                    <Link to='/OrdermySelf'>
+                      <button
+                        className='w-100 p-3 rounded-5 border-0 text-white'
+                        style={{ backgroundColor: '#FAB915' }}
+                      >
+                        <img
+                          src='./icomoon-free_lab.svg'
+                          alt='down arrow'
+                          className='me-4'
+                        />
+                        Order For Myself
+                      </button>
                     </Link>
                   </Col>
                   <Col md={6}>

@@ -3,11 +3,39 @@ import { Col, Container, Row } from 'react-bootstrap';
 import Footer from '../../../Compunents/Footer';
 import Navbare from '../../../Compunents/Navbar';
 import './WriteRxConfirm.css';
-const WriteRxConfirmfee = () => {
+const writePrescription = () => {
   const [SelectedDate, setSelectedDate] = useState(null);
   const handleDateChange = e => {
     setSelectedDate(e.target.value);
   };
+  const inputFields = [
+    {
+      label: 'Patient name',
+      placeholder: 'Mohsin',
+    },
+    {
+      label: 'Date of Birth',
+      placeholder: '09/Dec/2023',
+    },
+    {
+      label: 'Gender',
+      placeholder: 'Male',
+    },
+    {
+      label: 'Past Medical Problems',
+      placeholder: 'none',
+    },
+    {
+      label: 'Current Medications',
+      placeholder: 'Panadol tablet',
+    },
+    {
+      label: 'Allergies',
+      placeholder: 'none',
+    },
+    // Add more objects for additional input fields if needed
+  ];
+
   const items = [
     { name: 'Aldara 5% Topical Cream' },
     { name: 'Aldara 5% Topical Cream' },
@@ -32,11 +60,6 @@ const WriteRxConfirmfee = () => {
       placeholder: '',
       type: 'text',
     },
-    {
-      label: 'Quantity Unit of Measure',
-      placeholder: '',
-      type: 'text',
-    },
   ];
   const [formCount, setFormCount] = useState(1);
 
@@ -54,7 +77,12 @@ const WriteRxConfirmfee = () => {
     // Update formCount state with the modified array length
     setFormCount(updatedFormCount.length);
   };
+  const [isAdditionalFieldsVisible, setAdditionalFieldsVisible] =
+    useState(false);
 
+  const toggleAdditionalFields = () => {
+    setAdditionalFieldsVisible(!isAdditionalFieldsVisible);
+  };
   return (
     <>
       <Navbare />
@@ -66,10 +94,10 @@ const WriteRxConfirmfee = () => {
             <br />
             <br />
             <p
-              className='text-center fs-2'
+              className='text-center fs-3'
               style={{ color: '#FAB915', fontWeight: '500' }}
             >
-              Review / Prescribe Care
+              Prescription
             </p>
             <div
               className=' m-auto   py-5 mobw100 rounded-0 '
@@ -77,27 +105,151 @@ const WriteRxConfirmfee = () => {
             >
               <h6 className='pb-4 border-bottom'>
                 <span style={{ color: '#FAB915', fontSize: '24px' }}>
-                  Prescription Detail
+                  Prescribe a Medication
                 </span>
               </h6>
               <p style={{ fontSize: '12px', color: '#252424' }}>
+                Please enter the information below to send the medication
+                prescription to your patient. you will be notified by email if
+                your patient accepts your prescription.
+              </p>
+            </div>
+
+            <div
+              className=' m-auto  shadow  mobw100 rounded-5 p-5'
+              style={{ width: '75%' }}
+            >
+              <h6 className='pb-4  border-bottom'>
+                <b style={{ color: '#FAB915' }}>1 - H & P Notes</b>
+              </h6>
+              {inputFields.map((input, index) => (
+                <div key={index} className='mt-1'>
+                  <p
+                    className='mb-1 mt-2'
+                    style={{ color: '#181818', fontSize: '14px' }}
+                  >
+                    {input.label}
+                  </p>
+                  <input
+                    className='border-bottom w-100 m-0 p-0'
+                    placeholder={input.placeholder}
+                    disabled
+                    style={{ color: '#252424', backgroundColor: 'transparent' }}
+                  />
+                </div>
+              ))}
+
+              <p className='mt-4' style={{ color: '#FAB915' }}>
+                <img
+                  src='./galaAdd0.svg'
+                  alt=''
+                  className='me-3'
+                  onClick={toggleAdditionalFields}
+                />
+                Add Height / Weight
+              </p>
+
+              {isAdditionalFieldsVisible && (
+                <div>
+                  <div className='mt-1'>
+                    <p
+                      className='mb-1 mt-2'
+                      style={{ color: '#181818', fontSize: '14px' }}
+                    >
+                      Height (Inches)
+                    </p>
+                    <input
+                      className='shadow w-100 m-0 p-2 rounded-5 '
+                      placeholder='66.8'
+                      style={{
+                        color: '#252424',
+                        backgroundColor: 'transparent',
+                      }}
+                    />
+                  </div>
+                  <div className='mt-1'>
+                    <p
+                      className='mb-1 mt-2'
+                      style={{ color: '#181818', fontSize: '14px' }}
+                    >
+                      Weight (Pounds)
+                    </p>
+                    <input
+                      className='shadow w-100 m-0 p-2 rounded-5 '
+                      placeholder='66.8'
+                      style={{
+                        color: '#252424',
+                        backgroundColor: 'transparent',
+                      }}
+                    />
+                  </div>
+                  <div className='mt-1'>
+                    <p
+                      className='mb-1 mt-2'
+                      style={{ color: '#181818', fontSize: '14px' }}
+                    >
+                      Other Notes For Your Documentation
+                    </p>
+                    <textarea
+                      className='shadow w-100 m-0 p-4 rounded-5 border-0'
+                      placeholder='66.8'
+                      style={{
+                        color: '#252424',
+                        backgroundColor: 'transparent',
+                      }}
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <br />
+
+            <div
+              className=' m-auto  shadow p-5  mobw100 rounded-5 '
+              style={{ width: '75%' }}
+            >
+              <div className='pb-4  border-bottom d-flex justify-content-between align-items-center'>
+                <p className='my-0' style={{ color: '#FAB915' }}>
+                  2 - Prescription Detail
+                </p>
+
+                <div className='d-flex flex-column justify-content-start align-items-start'>
+                  <div>
+                    <p className='d-flex my-0' style={{ color: '#FAB915' }}>
+                      <img
+                        src='./galaAdd0.svg'
+                        alt=''
+                        role='button'
+                        className='me-4'
+                        onClick={handleAddForm}
+                      />
+                      Add Another Medication
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <p
+                className='mt-2'
+                style={{ color: '#252424', fontSize: '13px' }}
+              >
                 This is what gets sent to the pharmacy of your patient. Please
                 note that MK Health Care is not set up to enable the prescribing
                 of controlled substances.
               </p>
-            </div>
-            <div
-              className=' m-auto    mobw100 rounded-0 '
-              style={{ width: '75%' }}
-            >
-              <h6 className='pb-4 border-bottom'>
-                <b style={{ color: '#FAB915' }}>
-                  <img src='/public/gala_add.svg' className='me-3' alt='' />
-                  Hidden Previously Written Prescriptions
-                </b>
-              </h6>
-
               <Row className='mt-4'>
+                <div className='pb-3  border-bottom d-flex justify-content-between align-items-center'>
+                  <p className='d-flex my-0' style={{ color: '#FAB915' }}>
+                    <img
+                      src='./gala_add.svg'
+                      alt=''
+                      role='button'
+                      className='me-4'
+                    />
+                    Hidden Previously Written Prescriptions
+                  </p>
+                </div>
+
                 <Col md={6}>
                   {itemss.map(items => (
                     <div
@@ -141,28 +293,6 @@ const WriteRxConfirmfee = () => {
                   ))}
                 </Col>
               </Row>
-            </div>
-            <br />
-            <br />
-            <div
-              className=' m-auto    mobw100 rounded-0 '
-              style={{ width: '75%' }}
-            >
-              <div className='pb-4 border-bottom d-flex justify-content-between align-items-center'>
-                <p className='my-0' style={{ color: '#FAB915' }}>
-                  Prescription Detail
-                </p>
-                <p className='d-flex my-0' style={{ color: '#FAB915' }}>
-                  <img
-                    src='./galaAdd0.svg'
-                    alt=''
-                    role='button'
-                    className='me-4'
-                    onClick={handleAddForm}
-                  />
-                  Add Another Medication
-                </p>
-              </div>
               {[...Array(formCount)].map((_, index) => (
                 <div className='shadow p-4 rounded-5 mt-4'>
                   <div
@@ -235,7 +365,7 @@ const WriteRxConfirmfee = () => {
                     <option>Grepper</option>
                     <option>i don't want to do that </option>
                   </select>
-                  <p className='mb-1 ms-3 mt-3'>Date of Birth</p>
+                  <p className='mb-1 ms-3 mt-3'>Effective Date</p>
                   <div style={{ position: 'relative' }}>
                     <input
                       type='date'
@@ -256,7 +386,6 @@ const WriteRxConfirmfee = () => {
                                   
                       </div>
                     </div>
-                    {/* <p className='my-0 ms-4'></p> */}
                   </div>
 
                   <p
@@ -322,75 +451,122 @@ const WriteRxConfirmfee = () => {
               ))}
             </div>
             <br />
+            <br />
             <div className=' d-block d-md-flex align-items-center justify-content-center '>
               <div
-                className=' m-auto shadow mt-5 rounded-5   mobw100 rounded-0 '
+                className=' m-auto shadow mt-5 rounded-5 p-5  mobw100 rounded-0 '
                 style={{ width: '75%' }}
               >
-                <div className='p-4'>
-                  <div className='mt-4'>
-                    <p
-                      className='mb-1 ms-3 mt-3 '
-                      style={{ color: '#181818', fontSize: '14px' }}
-                    >
-                      Height (Inches)
-                    </p>
-                    <input
-                      className='shadow  w-100 m-0 p-3 rounded-5 '
-                      placeholder='66.8'
-                      style={{ color: '#252424' }}
-                    />
+                <div className='pb-4  border-bottom d-flex justify-content-between align-items-center'>
+                  <p className='my-0' style={{ color: '#FAB915' }}>
+                    3 - Pharmacy Information
+                  </p>
+
+                  <div className='d-flex flex-column justify-content-start align-items-start'>
+                    <div>
+                      <p className='d-flex my-0' style={{ color: '#FAB915' }}>
+                        Edit
+                      </p>
+                    </div>
                   </div>
-                  <div className='mt-4'>
-                    <p
-                      className='mb-1 ms-3 mt-3 '
-                      style={{ color: '#181818', fontSize: '14px' }}
+                </div>
+
+                <div className='m-auto obw100 ' style={{ width: '95%' }}>
+                  <div className='m-auto obw100 mt-5' style={{ width: '95%' }}>
+                    <Row
+                      className=' p-3 text-center rounded-4 d-flex  justify-content-between align-items-center'
+                      style={{ backgroundColor: '#FAFAFA' }}
                     >
-                      Weight (Pounds)
+                      <Col xl={4}>
+                        <button
+                          className=' p-2 border-0 rounded-5 w-50 '
+                          style={{
+                            color: '#FAB915',
+                            backgroundColor: '#FEF3D5',
+                          }}
+                        >
+                          Selected
+                        </button>
+                      </Col>
+                      <Col xl={4}>
+                        <p className='my-0 fw-bold '>Quest Diagnostics</p>
+                      </Col>
+                      <Col xl={4}>
+                        <p
+                          className='my-0 '
+                          style={{ fontSize: '13px', color: '#747E93' }}
+                        >
+                          135 Barclay Cir, Ste 103Rochester Hills,MI 48307{' '}
+                        </p>
+                      </Col>
+                    </Row>
+                    <p
+                      className='text-center mt-4'
+                      style={{ color: '#747E93', fontSize: '13px' }}
+                    >
+                      You can change your selected pharmacy.
                     </p>
-                    <input
-                      className='shadow  w-100 m-0 p-3 rounded-5 '
-                      placeholder='66.8'
-                      style={{ color: '#252424' }}
-                    />
                   </div>
+                            
                 </div>
               </div>
             </div>
+            <br />
+            <br />
             <div className=' d-block d-md-flex align-items-center justify-content-center '>
               <div
-                className=' m-auto shadow mt-5 rounded-5   mobw100 rounded-0 '
+                className=' m-auto shadow mt-5 rounded-5 p-5  mobw100 rounded-0 '
                 style={{ width: '75%' }}
               >
-                <div className='p-4'>
-                  <p style={{ color: '#FAB915', fontSize: '19px' }}>
-                    Professional Fee Authorized
+                <div className='pb-4  border-bottom d-flex justify-content-between align-items-center'>
+                  <p className='my-0' style={{ color: '#FAB915' }}>
+                    4 - Set Your Professional Fee
                   </p>
-                  <p style={{ color: '#FAB915', fontSize: '16px' }}>$25.00</p>
-                  <p style={{ color: '#252424', fontSize: '13px' }}>
-                    This is what gets sent to the pharmacy of your patient.
-                    Please note that MK Health Care is not set up to enable the
-                    prescribing of controlled substances.
-                  </p>
+                </div>
+
+                <div className='m-auto obw100 ' style={{ width: '95%' }}>
+                  <div className='m-auto obw100 mt-5' style={{ width: '95%' }}>
+                    <div className='mt-4'>
+                      <button
+                        className=' rounded-5 shadow'
+                        style={{
+                          backgroundColor: 'white',
+                          paddingRight: '10px',
+                          fontSize: '24px',
+                          color: '#FAB915',
+                          border: 'none', // Set border to "none" to remove border color
+                        }}
+                      >
+                        <span
+                          style={{
+                            paddingRight: '10px',
+                          }}
+                        >
+                          <img src='./bi_currency-dollar.svg' alt='currency' />
+                        </span>
+                        100.00
+                      </button>
+                    </div>
+                  </div>
+                            
                 </div>
               </div>
             </div>
-            <div
-              className=' m-auto   py-5 mobw100 rounded-0 '
-              style={{ width: '75%' }}
-            >
-              <h6 className='pb-4 border-bottom'>
-                <span style={{ color: '#FAB915', fontSize: '24px' }}>
-                  Sign Your Prescription
-                </span>
-              </h6>
-            </div>
+
+            <br />
+            <br />
+
             <div className=' d-block d-md-flex align-items-center justify-content-center '>
               <div
                 className=' m-auto shadow rounded-5   mobw100 rounded-0 '
                 style={{ width: '75%' }}
               >
                 <div className='p-4'>
+                  <h6 className='pb-4 border-bottom'>
+                    <span style={{ color: '#FAB915', fontSize: '24px' }}>
+                      Sign Your Prescription
+                    </span>
+                  </h6>
                   <div className='mt-4'>
                     <div className='form-group'>
                       <input type='checkbox' id='Terms_check_3' />
@@ -518,4 +694,4 @@ const WriteRxConfirmfee = () => {
   );
 };
 
-export default WriteRxConfirmfee;
+export default writePrescription;

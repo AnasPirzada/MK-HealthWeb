@@ -251,7 +251,7 @@ const PaitentDeatilForm = () => {
                   </Link>
                 </Col>
                 <Col md={6}>
-                  {/* <Link to='/RequestedRxForm'> */}
+                  <Link to='/Writeprescription'>
                     <button
                       className={`text-white w-100 p-3 border-0 rounded-5 mb-2 ${
                         activeButton === 1 ? 'active-button' : ''
@@ -269,45 +269,49 @@ const PaitentDeatilForm = () => {
                       />
                       Write Prescription
                     </button>
-                  {/* </Link> */}
+                  </Link>
                 </Col>
                 <Col md={6}>
-                  <button
-                    className={`text-white w-100 p-3 border-0 rounded-5 mb-2 ${
-                      activeButton === 2 ? 'active-button' : ''
-                    }`}
-                    style={{
-                      backgroundColor:
-                        activeButton === 2 ? '#F52E2E' : '#FAB915',
-                    }}
-                    onClick={() => handleButtonClick(2)}
-                  >
-                    <img
-                      src='./Component 615 – 2.svg'
-                      alt='icon'
-                      className='me-3'
-                    />{' '}
-                    Order Lab Tests
-                  </button>
+                  <Link to='/OrderLabTests'>
+                    <button
+                      className={`text-white w-100 p-3 border-0 rounded-5 mb-2 ${
+                        activeButton === 2 ? 'active-button' : ''
+                      }`}
+                      style={{
+                        backgroundColor:
+                          activeButton === 2 ? '#F52E2E' : '#FAB915',
+                      }}
+                      onClick={() => handleButtonClick(2)}
+                    >
+                      <img
+                        src='./Component 615 – 2.svg'
+                        alt='icon'
+                        className='me-3'
+                      />{' '}
+                      Order Lab Tests
+                    </button>
+                  </Link>
                 </Col>
                 <Col md={6}>
-                  <button
-                    className={`text-white w-100 p-3 border-0 rounded-5 mb-2 ${
-                      activeButton === 3 ? 'active-button' : ''
-                    }`}
-                    style={{
-                      backgroundColor:
-                        activeButton === 3 ? '#F52E2E' : '#FAB915',
-                    }}
-                    onClick={() => handleButtonClick(3)}
-                  >
-                    <img
-                      src='./Component 617 – 2.svg'
-                      alt='icon'
-                      className='me-3'
-                    />{' '}
-                    Create Invoice
-                  </button>
+                  <Link to='/CreateInvoice'>
+                    <button
+                      className={`text-white w-100 p-3 border-0 rounded-5 mb-2 ${
+                        activeButton === 3 ? 'active-button' : ''
+                      }`}
+                      style={{
+                        backgroundColor:
+                          activeButton === 3 ? '#F52E2E' : '#FAB915',
+                      }}
+                      onClick={() => handleButtonClick(3)}
+                    >
+                      <img
+                        src='./Component 617 – 2.svg'
+                        alt='icon'
+                        className='me-3'
+                      />{' '}
+                      Create Invoice
+                    </button>
+                  </Link>
                 </Col>
               </Row>
             </div>
